@@ -1,7 +1,7 @@
 # Maya_script
 Created Maya script storage
 
-## ViewSwitching
+## soViewSwitching
 
 **概要**
 
@@ -14,8 +14,8 @@ Maya Advent Calendar 2019の1日目（ https://qiita.com/amanatsu-knit/items/199
 ホットキー設定で下記のコードを設定してください。
 
 ```
-import ViewSwitching
-ViewSwitching.ViewSwitching("front") 
+import soViewSwitching
+soViewSwitching.ViewSwitching("front") 
 ```
 
 "front"の部分は、必要に応じて、"persp" or "top" or "side" に書き換えてください。
