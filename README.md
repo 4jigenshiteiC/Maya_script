@@ -19,3 +19,31 @@ soViewSwitching.ViewSwitching("front")
 ```
 
 "front"の部分は、必要に応じて、"persp" or "top" or "side" に書き換えてください。
+
+
+## soAddNoiseToAnimationCurve.py
+
+**概要**
+
+アニメーションカーブ（Fカーブ）にノイズを追加します。
+
+**使用方法**
+
+
+- スクリプトエディタのファイルを読み込み実行
+
+- C:\Users\<ユーザー名>\Documents\maya\scripts にファイル保存。<br>下記のコードを実行する。<br>
+```
+import soAddNoiseToAnimationCurve
+soAddNoiseToAnimationCurve.addNoiseWindow.showUI()
+```
+
+
+
+**バージョン**
+
+1.00　リリース
+
+**備考**
+
+- 1点確認済みのバグがあります。<br>アニメーションレイヤを削除し、【Select Layer ＞ Select AnimaLayer】に設定するとメニューが空になります。<br>ウィンドウを開きなおしてください。
