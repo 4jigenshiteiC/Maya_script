@@ -72,9 +72,6 @@ class matchTransform2(om.MPxCommand):
                 self.redoIt()
             except: pass
  
-    def redoIt(self):
-        self.doItQuery()
- 
     def undoIt(self):
         self.transformFn_Source.setTransformation(self.matrix_Source)
  
@@ -84,13 +81,12 @@ class matchTransform2(om.MPxCommand):
         """
         return True
  
-    def doItQuery(self):
+    def redoIt(self):
         #   Get target node matrix.
         mFnD_Target = om.MFnDependencyNode(self.mObjct_Target)
         world_matrix_attr_Target = mFnD_Target.attribute("worldMatrix")
         matrix_plug_Target = om.MPlug(self.mObjct_Target, world_matrix_attr_Target).elementByLogicalIndex(0)
         world_matrix_data = om.MFnMatrixData( matrix_plug_Target.asMObject()).matrix()
-        
  
         #   Get Source node parent matrix.
         mFnD_Source = om.MFnDependencyNode(self.mObjct_Source)
@@ -100,8 +96,7 @@ class matchTransform2(om.MPxCommand):
  
         #   Get order of target node.
         rotateOrderPlag = mFnD_Source.findPlug("rotateOrder",False)
-        rotateOrder = rotateOrderPlag.asInt()
-        
+        rotateOrder = rotateOrderPlag.asInt()    
  
         #   Get Transform value.
         Matrix = world_matrix_data * parent_matrix_data.inverse()
