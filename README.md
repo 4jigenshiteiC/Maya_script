@@ -1,6 +1,13 @@
 # Maya_script
 Created Maya script storage
 
+## importUnitychan.py
+
+**概要**
+ユニティーちゃんのFBXモデルをテクスチャ付きで読込みます。
+
+**使用方法**
+スクリプトエディタ、又はシェルフ登録をし実行してください。
 
 
 
